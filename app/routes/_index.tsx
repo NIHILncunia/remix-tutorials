@@ -1,14 +1,26 @@
 import type { MetaFunction } from '@remix-run/node';
+import { Link } from '@remix-run/react';
+import { setMeta } from '@/utils';
 
 export const meta: MetaFunction = () => {
-  return [
-    { title: 'New Remix App', },
-    { name: 'description', content: 'Welcome to Remix!', },
-  ];
+  return setMeta({
+    data: {
+      title: 'Home',
+      url: '/',
+    },
+  });
 };
 
 export default function Index() {
   return (
-    <div>content</div>
+    <>
+      <h1>Home</h1>
+      <Link to='/test'>Test</Link>
+
+      <form method='post' action='/test'>
+        <input type='text' name='test' />
+        <button type='submit'>Submit</button>
+      </form>
+    </>
   );
 }

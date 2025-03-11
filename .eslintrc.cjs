@@ -32,6 +32,7 @@ module.exports = {
   ],
   rules: {
     // 일반 규칙
+    indent: [ 'warn', 2, ],
     'no-console': 'off',
     'no-unused-vars': 'off',
     'no-unexpected-multiline': 'off',
